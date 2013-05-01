@@ -1,26 +1,14 @@
 Login::Application.routes.draw do
+  
+  get "loguot" => "sessions#destroy", :as => "logout"
+  get "login"  => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+
+  resources :users
+  resources :sessions 
   resources :products
 
-
-  get "sessions/new"
-
-  get "sessions/create"
-
-  get "sessions/destroy"
-
-  get "users/index"
-
-  get "users/show"
-
-  get "users/new"
-
-  get "users/create"
-
-  get "users/edit"
-
-  get "users/update"
-
-  get "users/destroy"
+  root :to => "user#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
