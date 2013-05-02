@@ -1,5 +1,5 @@
-<h1>Sessions#new</h1>
-<%= form_tag sessions_path do %>
+<h1 class="offset4">Iniciar Sesion</h1>
+<%= form_tag  users_path, :class => "offset4" do %>
 	<div class="field">
 		<%= label_tag :username %>
 		<%= text_field_tag :username, params[:username] %>
@@ -14,5 +14,6 @@
 		<%= check_box_tag :remember_me, 1, params[:remember_me] %>
 		<%= label_tag :remember_me %>
 	</div>
-	<div class="actions"><%= submit_tag "iniciar sesion"%></div>
+	<div><%= submit_tag "iniciar sesion", :class => "btn btn-mini btn-info" %><%= link_to "atras", users_path, :class => "btn btn-mini" %></div>
+	<div></div>
 <% end %>	

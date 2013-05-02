@@ -1,2 +1,20 @@
-<h1></h1>
-<p><%= link_to "pagina restringida a users registrados", products_path%></p>
+<h1><p class="offset">Pagina de prueva para la gema sorcery no puedes entrar a productos sin estar registrado</p></h1>
+
+<div class="container">
+	<div class="offset4">
+		<% if current_user %>
+			Registrado como: <%= current_user.email%>
+			<%= link_to "salir", logout_path%>
+		<% else %>
+			<%= link_to "Registrarse", signup_path, :class => "btn btn-small btn-success" %> o
+			<%= link_to "Entrar", login_path, :class => "btn btn-small " %>	
+		<% end %>
+		<br>
+		<br>
+		<p><%= link_to "Productos", products_path, :class => "btn btn-mini btn-info" %></p>
+	</div>
+	<% flash.each do |name, msg| %>
+		<%= content_tag :div, msg, :id => "flash_#{name}" %>	
+	<% end %>	
+</div>			
+

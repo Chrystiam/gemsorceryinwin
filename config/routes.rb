@@ -8,7 +8,7 @@ Login::Application.routes.draw do
   resources :sessions 
   resources :products
 
-  root :to => "user#index"
+  root :to => "users#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
